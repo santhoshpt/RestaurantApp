@@ -1,23 +1,23 @@
 package com.restaurant.menu;
 
 public class MenuItem {
-	private long id;
+	private String id;
 	private String name;
 	private String description;
-	private double price;
+	private String price;
 	
-	public MenuItem(long id, String name, String description, double price) {
+	public MenuItem(String id, String name, String description, String price) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.price = price;
 	}
 	
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	
-	public long getId() {
+	public String getId() {
 		return this.id;
 	}
 	
@@ -37,11 +37,11 @@ public class MenuItem {
 		return this.description;
 	}
 	
-	public void setPrice(double price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 	
-	public double getPrice() {
+	public String getPrice() {
 		return this.price;
 	}
 }
