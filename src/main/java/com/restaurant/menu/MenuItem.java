@@ -44,4 +44,15 @@ public class MenuItem {
 	public String getPrice() {
 		return this.price;
 	}
+	
+	public String toString() {
+		StringBuffer sb = new StringBuffer();
+		sb.append("{");
+		sb.append("\"id: \"").append("\""+id+"\",");
+		sb.append("\"name: \"").append("\""+name+"\",");
+		sb.append("\"description: \"").append("\""+description+"\",");
+		sb.append("\"price: \"").append("\""+price+"\"");
+		sb.append("}");
+		return sb.toString();
+	}
 }

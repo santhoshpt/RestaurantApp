@@ -15,30 +15,50 @@ cd into RestaurantApp
 
 gradlew bootRun
 
-Get menu item for specific identifier
-http://localhost:8080/restaurant/menu/item?id=10
-{"id":10,"name":"test","description":"test","price":10.0}
-
-Insert new menu item
 http://localhost:8080/restaurant/menu/item
+RequestMethod=POST
+Content-Type=application/json
+Accept=application/json
+Request Body
 {
-    "id":"100",
-	"name":"Cheese Pizza",
-	"description":"Pizza with cheese",
+    "id":"200",
+	"name":"Crispy Pizza",
+	"description":"Crispy Pizza",
 	"price":"250.00"
 }
+Http Status Code = 200
 
-Update an existing menu item
-http://localhost:8080/restaurant/menu/item?id=10
+
+http://localhost:8080/restaurant/menu/item?id=100
+RequestMethod=GET
+Accept=application/json
+Resoponse
 {
-    "id":"100",
-	"name":"Cheese Pizza",
-	"description":"Pizza with cheese",
+    "id":"200",
+	"name":"Crispy Pizza",
+	"description":"Crispy Pizza",
+	"price":"250.00"
+}
+Http Status Code = 200, 404
+
+http://localhost:8080/restaurant/menu/item/100
+RequestMethod=PUT
+Content-Type=application/json
+Accept=application/json
+Body
+{
+    "id":"200",
+	"name":"Crispy Pizza",
+	"description":"Crispy Pizza",
 	"price":"300.00"
 }
+Http Status Code = 200, 404
 
-Delete an existing menu item
-http://localhost:8080/restaurant/menu/item?id=10
+http://localhost:8080/restaurant/menu/item/100
+RequestMethod=DELETE
+Http Status Code = 200, 404
+
+
 
 References
 https://spring.io/guides/gs/rest-service/#scratch
