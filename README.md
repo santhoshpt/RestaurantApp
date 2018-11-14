@@ -14,7 +14,7 @@ Setting up Java
 	Java(TM) SE Runtime Environment (build 1.8.0_191-b12) 
 	Java HotSpot(TM) 64-Bit Server VM (build 25.191-b12, mixed mode)
 
-Clonning the project into local machine
+Clonning the project into local machine or else download archieve.
 
 	Set up the git in local machine.
 	git clone https://github.com/santhoshpt/RestaurantApp.git 
@@ -22,55 +22,53 @@ Clonning the project into local machine
 
 gradlew bootRun
 
-	Running the application with embedded Tomcat server
+	Running the application with embedded Tomcat server and execute the following URLs in Postman.
 
-Insert a menu item
+Adding a new menu item resource
 
-	http://localhost:8080/restaurant/menu/item
+	URL: http://localhost:8080/restaurant/menu/item
 	RequestMethod=POST
 	Content-Type=application/json
 	Accept=application/json
 	Request Body
 	{
-	    "id":"200",
-		"name":"Crispy Pizza",
-		"description":"Crispy Pizza",
-		"price":"250.00"
+	    "name":"Crispy Pizza",
+	     "description":"Crispy Pizza",
+	     "price":"250.00"
 	}
-	Http Status Code = 200
+	Reponse http status code is 200
 
-Query for a menu item
+To read an existing menu item resource
 
-	http://localhost:8080/restaurant/menu/item?id=100
+	URL: http://localhost:8080/restaurant/menu/item/1
 	RequestMethod=GET
 	Accept=application/json
-	Resoponse
+	Resoponse Body
 	{
-	    "id":"200",
-		"name":"Crispy Pizza",
-		"description":"Crispy Pizza",
-		"price":"250.00"
+	    "id":"1",
+	    "name":"Crispy Pizza",
+	    "description":"Crispy Pizza",
+	     "price":"250.00"
 	}
 	Http Status Code = 200, 404
 
-Update an exiting menu item
+To Update an exiting menu item
 
-	http://localhost:8080/restaurant/menu/item/100
+	URL: http://localhost:8080/restaurant/menu/item/1
 	RequestMethod=PUT
 	Content-Type=application/json
 	Accept=application/json
-	Body
+	Request Body
 	{
-	    "id":"200",
-		"name":"Crispy Pizza",
-		"description":"Crispy Pizza",
-		"price":"300.00"
+	     "name":"Crispy Pizza",
+	     "description":"Crispy Pizza",
+	     "price":"300.00"
 	}
 	Http Status Code = 200, 404
 
 Delete an exiting menu item
 
-	http://localhost:8080/restaurant/menu/item/100
+	URL: http://localhost:8080/restaurant/menu/item/1
 	RequestMethod=DELETE
 	Http Status Code = 200, 404
 
