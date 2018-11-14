@@ -37,6 +37,27 @@ Adding a new menu item resource
 	     "price":"250.00"
 	}
 	Reponse http status code is 200
+	
+To read all menu item resources
+
+	URL: http://localhost:8080/restaurant/menu/item
+	RequestMethod=GET
+	Accept=application/json
+	Resoponse Body
+	[
+	  {
+	    "id":"1000",
+	    "name":"Pizza",
+	    "description":"Pizza",
+	    "price":"100.00"
+	  },{
+	    "id":"2000",
+	    "name":"Cheese Pizza",
+	    "description":"Cheese Pizza",
+	    "price":"200.00"
+	  }
+	]
+	Http Status Code = 200, 404
 
 To read an existing menu item resource
 
